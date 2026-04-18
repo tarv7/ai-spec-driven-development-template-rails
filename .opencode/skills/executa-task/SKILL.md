@@ -13,11 +13,16 @@ description: Implementa tarefas de funcionalidades lendo o contexto do PRD/TechS
 3. Leia o PRD em `./ai-sdd/prd-[feature-slug]/prd.md` para contexto de negócio.
 4. Leia a Tech Spec em `./ai-sdd/prd-[feature-slug]/techspec.md` para decisões técnicas.
 5. Identifique dependências de tarefas anteriores e verifique se estão concluídas em `tasks.md`.
-6. NÃO pule nenhuma dessas leituras — a tarefa será invalidada sem contexto completo.
+6. **[OPCIONAL — Paper]** Verifique se existe `./ai-sdd/prd-[feature-slug]/paper-artboards.md`.
+   - Se existir E a task tiver referências de design (seção "Design de Referência (Paper)"), marque `usa_paper = true`.
+   - Se não existir ou a task não referenciar artboards, marque `usa_paper = false` e prossiga normalmente.
+7. NÃO pule nenhuma dessas leituras — a tarefa será invalidada sem contexto completo.
 
 **Passo 2: Carregar Skills e Padrões (Obrigatório)**
 1. Leia `AGENTS.md` para reforçar convenções, comandos e padrões do projeto.
 2. Identifique skills em `.opencode/skills/` relevantes para as tecnologias da tarefa.
+   - Se a task tem UI: sempre carregue `rails-visual-design` e `rails-components`.
+   - **[OPCIONAL — Paper]** Se `usa_paper = true`: carregue também `paper-to-rails`.
 3. Consulte documentação de frameworks e bibliotecas envolvidas quando necessário (use Context7 MCP).
 
 **Passo 3: Análise da Tarefa (Obrigatório)**
@@ -46,8 +51,11 @@ description: Implementa tarefas de funcionalidades lendo o contexto do PRD/TechS
    - Adicione índices em colunas frequentemente consultadas.
    - Use strong parameters em controllers.
    - Use `ApplicationRecord`, `ApplicationController`, `ApplicationJob` como base.
-3. Siga a Tech Spec para decisões de arquitetura e design.
-4. Referencie requisitos do PRD (RF-XXX) nos comentários quando relevante.
+3. **[OPCIONAL — Paper]** Se `usa_paper = true`: execute a skill `paper-to-rails` para gerar as views.
+   - A skill tentará conectar ao Paper MCP. Se falhar, informe o usuário e gere views via `rails-visual-design`.
+   - Se `usa_paper = false`: gere views seguindo `rails-visual-design` + `rails-components`.
+4. Siga a Tech Spec para decisões de arquitetura e design.
+5. Referencie requisitos do PRD (RF-XXX) nos comentários quando relevante.
 
 **Passo 6: Testes (Obrigatório)**
 1. Crie testes para toda funcionalidade implementada:
@@ -89,9 +97,11 @@ description: Implementa tarefas de funcionalidades lendo o contexto do PRD/TechS
 - [ ] PRD, Tech Spec e arquivo da tarefa lidos completamente.
 - [ ] Dependências de tarefas anteriores verificadas.
 - [ ] Skills e AGENTS.md consultados.
+- [ ] `paper-artboards.md` verificado (detectar se tarefa usa Paper).
 - [ ] Plano de abordagem definido.
 - [ ] Implementação segue padrões Rails (convenções, i18n, strong params).
 - [ ] Implementação segue a Tech Spec.
+- [ ] Views geradas via `paper-to-rails` (se Paper disponível) ou `rails-visual-design` (fallback).
 - [ ] Testes unitários criados e passando.
 - [ ] Testes de integração criados e passando.
 - [ ] Testes E2E criados quando aplicável.

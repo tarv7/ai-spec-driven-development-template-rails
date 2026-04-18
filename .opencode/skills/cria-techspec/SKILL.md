@@ -10,7 +10,10 @@ description: Cria Especificações Técnicas a partir de um PRD existente, tradu
 **Passo 1: Validar Pré-requisitos**
 1. Confirme que o slug da funcionalidade foi fornecido.
 2. Verifique se o PRD existe em `ai-sdd/prd-[feature-slug]/prd.md`. Se ausente, interrompa e direcione o usuário para a skill `cria-prd`.
-3. Verifique a existência de documentos de contexto (não bloqueia, mas enriquece a spec):
+3. **[OPCIONAL — Paper]** Verifique se existe `ai-sdd/prd-[feature-slug]/paper-artboards.md`.
+   - Se existir: leia-o e informe ao usuário que os artboards serão utilizados como referência visual na spec.
+   - Se não existir: prossiga normalmente. Sugira ao usuário executar `design-in-paper` antes se quiser definir o design antes da spec (opcional).
+4. Verifique a existência de documentos de contexto (não bloqueia, mas enriquece a spec):
    - `./ai-sdd/system/vision.md` — propósito e proposta de valor.
    - `./ai-sdd/system/product_map.md` — fluxos de usuário relacionados.
    - `./ai-sdd/system/roadmap.md` — fase correspondente da funcionalidade.
@@ -64,13 +67,14 @@ description: Cria Especificações Técnicas a partir de um PRD existente, tradu
 **Passo 8: Gerar Tech Spec (Obrigatório)**
 1. Leia o template em `assets/techspec-template.md`.
 2. Siga a estrutura do template sem desvios — cada seção deve ser preenchida.
-3. Regras de redação:
+3. **[OPCIONAL — Paper]** Se `paper-artboards.md` existir: inclua uma seção "Design de Referência (Paper)" na spec com a tabela de artboards e IDs. As decisões de UI/UX da spec devem referenciar os artboards aprovados.
+4. Regras de redação:
    - Foque no **COMO**, não no O QUÊ (o PRD tem o que/porquê).
    - NÃO repita requisitos funcionais do PRD — referencie-os pelo código (RF-XXX).
    - A spec define **especificação**, NÃO código de implementação detalhado.
    - Interfaces e exemplos de código devem ser concisos (≤20 linhas por exemplo).
    - Prefira bibliotecas/gems existentes ao invés de desenvolvimento customizado.
-4. Mantenha o documento com ~2.000 palavras.
+5. Mantenha o documento com ~2.000 palavras.
 
 **Passo 9: Salvar Tech Spec (Obrigatório)**
 1. Salve em: `ai-sdd/prd-[feature-slug]/techspec.md`.
@@ -93,12 +97,14 @@ description: Cria Especificações Técnicas a partir de um PRD existente, tradu
 
 ## Lista de Verificação de Qualidade
 - [ ] PRD lido e requisitos principais extraídos.
+- [ ] `paper-artboards.md` verificado (usar como referência visual se existir).
 - [ ] Base de código analisada em profundidade.
 - [ ] Pesquisa web concluída (mín. 3 buscas).
 - [ ] Perguntas de esclarecimento concluídas e respondidas.
 - [ ] Plano arquitetural apresentado e aprovado pelo usuário.
 - [ ] Skills e AGENTS.md verificados para conformidade.
 - [ ] Tech Spec gerada usando o template.
+- [ ] Se Paper usado: seção "Design de Referência (Paper)" incluída na spec.
 - [ ] Sem requisitos funcionais repetidos do PRD.
 - [ ] Interfaces e exemplos de código concisos.
 - [ ] Estratégia de testes definida (unit, integração, E2E).

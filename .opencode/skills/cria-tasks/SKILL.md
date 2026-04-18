@@ -11,6 +11,9 @@ description: Converte PRD e Tech Spec em uma lista detalhada e sequencial de tar
 1. Confirme que o slug da funcionalidade foi fornecido.
 2. Verifique se o PRD existe em `ai-sdd/prd-[feature-slug]/prd.md`. Se ausente, interrompa e direcione o usuário para a skill `cria-prd`.
 3. Verifique se o Tech Spec existe em `ai-sdd/prd-[feature-slug]/techspec.md`. Se ausente, interrompa e direcione o usuário para a skill `cria-techspec`.
+4. **[OPCIONAL — Paper]** Verifique se existe `ai-sdd/prd-[feature-slug]/paper-artboards.md`.
+   - Se existir: leia-o e mantenha o mapeamento de artboards disponível para usar nas tasks de UI (Passo 4).
+   - Se não existir: prossiga normalmente, sem referências de design.
 
 **Passo 2: Analisar PRD e Tech Spec (Obrigatório)**
 1. Leia o PRD completamente para extrair:
@@ -51,6 +54,13 @@ description: Converte PRD e Tech Spec em uma lista detalhada e sequencial de tar
    - **Testes**: Inclua testes como subtarefas dentro de cada tarefa (unit, integração, E2E quando aplicável).
    - **Critérios de Sucesso**: Cada tarefa deve ter resultados mensuráveis e verificáveis.
    - **Arquivos**: Liste arquivos que serão criados ou modificados.
+   - **[OPCIONAL — Paper]** Para tasks que envolvam criação de views/UI: se `paper-artboards.md` existir, adicione uma seção ao arquivo da task:
+     ```markdown
+     ## Design de Referência (Paper)
+     - Artboard: [nome do artboard correspondente]
+     - Artboard ID: [id do artboard]
+     ```
+     Use o mapeamento de `paper-artboards.md` para identificar os artboards corretos por RF.
 6. Se os diretórios de saída já contiverem arquivos, confirme com o usuário antes de sobrescrever.
 
 **Passo 5: Relatar Resultados**
@@ -68,6 +78,7 @@ description: Converte PRD e Tech Spec em uma lista detalhada e sequencial de tar
 
 ## Lista de Verificação de Qualidade
 - [ ] PRD e Tech Spec lidos e analisados completamente.
+- [ ] `paper-artboards.md` verificado (adicionar referências de design nas tasks de UI se existir).
 - [ ] Requisitos funcionais (RF-XXX) mapeados para tarefas.
 - [ ] Lista de tarefas de alto nível aprovada pelo usuário.
 - [ ] Arquivos de tarefas gerados usando templates.
@@ -75,6 +86,7 @@ description: Converte PRD e Tech Spec em uma lista detalhada e sequencial de tar
 - [ ] Cada tarefa tem testes (unit, integração e/ou E2E).
 - [ ] Cada tarefa tem critérios de sucesso mensuráveis.
 - [ ] Cada tarefa lista arquivos relevantes.
+- [ ] Tasks de UI com Paper: seção "Design de Referência (Paper)" incluída.
 - [ ] Dependências entre tarefas respeitadas na ordenação.
 - [ ] Sem detalhes de implementação copiados da Tech Spec.
 - [ ] Arquivos salvos em `./ai-sdd/prd-[feature-slug]/`.
