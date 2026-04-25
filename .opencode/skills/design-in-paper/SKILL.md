@@ -27,6 +27,9 @@ Antes de qualquer ação, verifique se o Paper MCP está disponível:
 
 Se o MCP não estiver disponível, **interrompa** e oriente o usuário — não prossiga.
 
+> **📖 Referência de Tools:** Para documentação completa de todas as tools do Paper MCP
+> (parâmetros, retornos, exemplos, workflows), consulte a skill **`mcp-paper`**.
+
 ---
 
 ## Posição no Pipeline AI-SDD
@@ -53,7 +56,7 @@ cria-techspec     ← usa artboards aprovados como referência
    - Requisitos funcionais com impacto visual (RF-XXX)
    - Tipo de usuário e contexto de uso
    - Fora de escopo
-
+otimo
 ### Passo 2: Ler Design System (se existir)
 
 1. Verifique se existe `app/assets/stylesheets/application.css` com `@theme`
@@ -202,6 +205,18 @@ Após criar os artboards, gere um bloco Markdown para ser adicionado à techspec
 ```
 
 Salve este bloco em: `ai-sdd/prd-[feature-slug]/paper-artboards.md`
+
+---
+
+## Skills Relacionadas
+
+| Skill | Relação |
+|-------|---------|
+| **`mcp-paper`** | Referência canônica de todas as tools do Paper MCP — parâmetros, retornos, exemplos e workflows compostos. Consulte para detalhes de qualquer tool. |
+| `paper-to-rails` | Converte os artboards criados por esta skill em código Rails (ERB + Tailwind + i18n). |
+| `tailwind-design-system` | Fornece tokens CSS usados no HTML escrito via `write_html`. |
+| `cria-techspec` | Próximo passo no pipeline — usa os artboards aprovados como referência. |
+| `cria-prd` | Passo anterior no pipeline — fornece os requisitos funcionais usados aqui. |
 
 ---
 

@@ -28,6 +28,9 @@ Antes de qualquer ação, verifique se o Paper MCP está disponível:
 
 Se o MCP não estiver disponível, **interrompa** — não tente gerar código sem o design.
 
+> **📖 Referência de Tools:** Para documentação completa de todas as tools do Paper MCP
+> (parâmetros, retornos, exemplos, workflows), consulte a skill **`mcp-paper`**.
+
 ---
 
 ## Como Esta Skill é Acionada
@@ -260,6 +263,19 @@ executa-task
            implementa model, controller, routes, jobs
   Passo 6: testes (system tests validam visual com Capybara)
 ```
+
+---
+
+## Skills Relacionadas
+
+| Skill | Relação |
+|-------|---------|
+| **`mcp-paper`** | Referência canônica de todas as tools do Paper MCP — parâmetros, retornos, exemplos e workflows compostos. Consulte para detalhes de qualquer tool. |
+| `design-in-paper` | Cria artboards a partir de PRDs — produz os designs que esta skill converte em código. |
+| `stimulus-patterns` | Padrões Stimulus usados quando o design tem interações (dropdowns, modals, etc). |
+| `tailwind-design-system` | Tokens do design system para mapeamento de cores/estilos do Paper → Tailwind. |
+| `rails-visual-design` | Fallback quando o Paper MCP não está disponível. |
+| `executa-task` | Orquestrador que aciona esta skill automaticamente quando detecta artboards Paper. |
 
 ---
 
