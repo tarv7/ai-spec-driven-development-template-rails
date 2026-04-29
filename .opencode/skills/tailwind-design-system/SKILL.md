@@ -264,13 +264,13 @@ Antes de definir tokens, identifique o tipo de produto para guiar as escolhas:
 
 ```erb
 <%# Uso dos tokens como classes Tailwind v4 %>
-<div class="bg-[--color-surface-elevated] text-[--color-text-primary]
-            border border-[--color-border] rounded-[--radius-lg]
-            shadow-[--shadow-card]">
-  <h2 class="text-xl font-semibold text-[--color-text-primary]">
+<div class="bg-(--color-surface-elevated) text-(--color-text-primary)
+            border border-(--color-border) rounded-(--radius-lg)
+            shadow-(--shadow-card)">
+  <h2 class="text-xl font-semibold text-(--color-text-primary)">
     Título
   </h2>
-  <p class="text-sm text-[--color-text-muted]">
+  <p class="text-sm text-(--color-text-muted)">
     Descrição
   </p>
 </div>
@@ -293,8 +293,8 @@ Antes de definir tokens, identifique o tipo de produto para guiar as escolhas:
 
 | Não faça | Faça |
 |----------|------|
-| `class="bg-indigo-600"` hardcoded | `class="bg-[--color-primary]"` |
+| `class="bg-indigo-600"` hardcoded | `class="bg-(--color-primary)"` |
 | `@apply` extensivamente no CSS | Classes Tailwind diretamente no ERB |
 | Tokens em `tailwind.config.js` | Tokens em `@theme` no CSS (v4) |
 | Cores diferentes para o mesmo conceito | Um token, uma cor, consistência total |
-| Sombras inventadas por view | `shadow-[--shadow-card]` do design system |
+| Sombras inventadas por view | `shadow-(--shadow-card)` do design system |

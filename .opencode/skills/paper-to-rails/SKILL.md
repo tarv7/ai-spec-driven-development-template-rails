@@ -119,8 +119,8 @@ Regras de conversão obrigatórias:
 ↓
 ```erb
 <%# ERB Rails %>
-<div class="flex flex-col gap-6 p-8 bg-[--color-surface]">
-  <h1 class="text-2xl font-semibold text-[--color-text-primary]">
+<div class="flex flex-col gap-6 p-8 bg-(--color-surface)">
+  <h1 class="text-2xl font-semibold text-(--color-text-primary)">
     <%= t('.title') %>
   </h1>
 </div>
@@ -135,7 +135,7 @@ Regras de conversão obrigatórias:
 | `{variable}` | `<%= variable %>` |
 | `list.map(item => ...)` | `<% @items.each do \|item\| %>` |
 | `condition ? a : b` | `<% if condition %>...<% else %>...<% end %>` |
-| Cores hardcoded (`#3b82f6`) | CSS Variables do design system (`bg-[--color-primary]`) |
+| Cores hardcoded (`#3b82f6`) | CSS Variables do design system (`bg-(--color-primary)`) |
 | Valores Tailwind padrão | Verificar se há token equivalente no `@theme` |
 | `onClick={handler}` | `data-controller` + `data-action` (Stimulus) |
 | `href="/path"` | `<%= link_to ..., path %>` ou `<%= url_for ... %>` |
@@ -169,18 +169,18 @@ Regras de conversão obrigatórias:
 O JSX do Paper pode ter cores hardcoded. Sempre mapeie para tokens:
 
 ```
-bg-white         → bg-[--color-surface-elevated]
-bg-gray-50       → bg-[--color-surface]
-bg-gray-100      → bg-[--color-surface-sunken]
-text-gray-900    → text-[--color-text-primary]
-text-gray-500    → text-[--color-text-muted]
-border-gray-200  → border-[--color-border]
-bg-blue-600      → bg-[--color-primary]
-hover:bg-blue-700 → hover:bg-[--color-primary-hover]
-shadow-sm        → shadow-[--shadow-card]
-shadow-lg        → shadow-[--shadow-elevated]
-rounded-lg       → rounded-[--radius-lg]
-rounded-md       → rounded-[--radius-md]
+bg-white         → bg-(--color-surface-elevated)
+bg-gray-50       → bg-(--color-surface)
+bg-gray-100      → bg-(--color-surface-sunken)
+text-gray-900    → text-(--color-text-primary)
+text-gray-500    → text-(--color-text-muted)
+border-gray-200  → border-(--color-border)
+bg-blue-600      → bg-(--color-primary)
+hover:bg-blue-700 → hover:bg-(--color-primary-hover)
+shadow-sm        → shadow-(--shadow-card)
+shadow-lg        → shadow-(--shadow-elevated)
+rounded-lg       → rounded-(--radius-lg)
+rounded-md       → rounded-(--radius-md)
 ```
 
 Se encontrar uma cor sem token equivalente, use o valor Tailwind padrão e documente

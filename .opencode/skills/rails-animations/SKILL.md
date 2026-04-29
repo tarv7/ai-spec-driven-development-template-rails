@@ -92,15 +92,15 @@ export default class extends Controller {
 
 ```erb
 <%# Card com hover %>
-<div class="group bg-[--color-surface-elevated] rounded-[--radius-lg]
-            border border-[--color-border] shadow-[--shadow-card]
-            hover:shadow-[--shadow-elevated] hover:border-[--color-border-strong]
+<div class="group bg-(--color-surface-elevated) rounded-(--radius-lg)
+            border border-(--color-border) shadow-(--shadow-card)
+            hover:shadow-(--shadow-elevated) hover:border-(--color-border-strong)
             transition-all duration-200 cursor-pointer">
   <div class="p-6 space-y-3">
     <div class="group-hover:translate-x-0.5 transition-transform duration-200">
-      <h3 class="font-semibold text-[--color-text-primary]">Título</h3>
+      <h3 class="font-semibold text-(--color-text-primary)">Título</h3>
     </div>
-    <p class="text-sm text-[--color-text-muted]">Descrição</p>
+    <p class="text-sm text-(--color-text-muted)">Descrição</p>
   </div>
 </div>
 
@@ -111,7 +111,7 @@ export default class extends Controller {
 
 <%# Link com underline animado %>
 <a href="#" class="relative after:absolute after:bottom-0 after:left-0
-                   after:h-px after:w-0 after:bg-[--color-primary]
+                   after:h-px after:w-0 after:bg-(--color-primary)
                    after:transition-all after:duration-200
                    hover:after:w-full">
   Saiba mais
@@ -220,11 +220,11 @@ html[data-turbo-preview] body {
   <%# Skeleton mostrado enquanto o frame carrega %>
   <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 animate-pulse">
     <% 3.times do %>
-      <div class="bg-[--color-surface-elevated] rounded-[--radius-lg]
-                  border border-[--color-border] p-6 space-y-3">
-        <div class="h-3 bg-[--color-surface-sunken] rounded-full w-1/2"></div>
-        <div class="h-8 bg-[--color-surface-sunken] rounded-[--radius-sm] w-3/4"></div>
-        <div class="h-3 bg-[--color-surface-sunken] rounded-full w-1/3"></div>
+      <div class="bg-(--color-surface-elevated) rounded-(--radius-lg)
+                  border border-(--color-border) p-6 space-y-3">
+        <div class="h-3 bg-(--color-surface-sunken) rounded-full w-1/2"></div>
+        <div class="h-8 bg-(--color-surface-sunken) rounded-(--radius-sm) w-3/4"></div>
+        <div class="h-3 bg-(--color-surface-sunken) rounded-full w-1/3"></div>
       </div>
     <% end %>
   </div>
@@ -284,7 +284,7 @@ export default class extends Controller {
 <%# locals: (title:, size: :md) %>
 <div data-controller="modal"
      data-action="keydown.esc@window->modal#close turbo:frame-load->modal#open"
-     class="fixed inset-0 z-[--z-modal] flex items-end sm:items-center justify-center p-4">
+     class="fixed inset-0 z-(--z-modal) flex items-end sm:items-center justify-center p-4">
 
   <%# Backdrop %>
   <div data-modal-target="backdrop" data-action="click->modal#close"
@@ -292,15 +292,15 @@ export default class extends Controller {
 
   <%# Painel %>
   <div data-modal-target="panel"
-       class="relative bg-[--color-surface-elevated] rounded-[--radius-xl]
-              shadow-[--shadow-modal] border border-[--color-border]
+       class="relative bg-(--color-surface-elevated) rounded-(--radius-xl)
+              shadow-(--shadow-modal) border border-(--color-border)
               w-full max-w-md opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95
               transition-all duration-200">
-    <div class="flex items-center justify-between px-6 py-4 border-b border-[--color-border]">
-      <h2 class="text-base font-semibold text-[--color-text-primary]"><%= title %></h2>
+    <div class="flex items-center justify-between px-6 py-4 border-b border-(--color-border)">
+      <h2 class="text-base font-semibold text-(--color-text-primary)"><%= title %></h2>
       <button data-action="modal#close" aria-label="<%= t('shared.close') %>"
-              class="p-1 rounded-[--radius-sm] text-[--color-text-muted]
-                     hover:text-[--color-text-primary] hover:bg-[--color-surface-sunken]
+              class="p-1 rounded-(--radius-sm) text-(--color-text-muted)
+                     hover:text-(--color-text-primary) hover:bg-(--color-surface-sunken)
                      transition-colors">✕</button>
     </div>
     <div class="p-6"><%= yield %></div>

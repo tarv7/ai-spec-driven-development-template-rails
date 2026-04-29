@@ -90,7 +90,7 @@ Garanta que o `application.html.erb` e o layout base estejam bem estruturados:
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="h-full bg-[--color-surface] text-[--color-text-primary] font-body antialiased">
+  <body class="h-full bg-(--color-surface) text-(--color-text-primary) font-body antialiased">
     <%= render "shared/navbar" %>
 
     <main id="main-content" class="min-h-[calc(100vh-4rem)]">
@@ -180,14 +180,14 @@ inline   → gap-2, gap-3 entre elementos
 ```erb
 <%# Botão primário %>
 <%= link_to t(".action"), path,
-      class: "inline-flex items-center gap-2 px-4 py-2 rounded-[--radius-md]
-              bg-[--color-primary] hover:bg-[--color-primary-hover]
+      class: "inline-flex items-center gap-2 px-4 py-2 rounded-(--radius-md)
+              bg-(--color-primary) hover:bg-(--color-primary-hover)
               text-white text-sm font-medium
               transition-colors duration-150 focus-visible:ring-2" %>
 
 <%# Card %>
-<div class="bg-[--color-surface-elevated] rounded-[--radius-lg]
-            shadow-[--shadow-card] border border-[--color-border] p-6">
+<div class="bg-(--color-surface-elevated) rounded-(--radius-lg)
+            shadow-(--shadow-card) border border-(--color-border) p-6">
   <%# conteúdo %>
 </div>
 
@@ -202,17 +202,17 @@ inline   → gap-2, gap-3 entre elementos
 
 ```erb
 <%# Heading da página %>
-<h1 class="text-2xl font-semibold tracking-tight text-[--color-text-primary]">
+<h1 class="text-2xl font-semibold tracking-tight text-(--color-text-primary)">
   <%= t(".title") %>
 </h1>
 
 <%# Subtítulo / descrição %>
-<p class="text-sm text-[--color-text-muted] leading-relaxed">
+<p class="text-sm text-(--color-text-muted) leading-relaxed">
   <%= t(".description") %>
 </p>
 
 <%# Label de formulário %>
-<label class="block text-sm font-medium text-[--color-text-primary] mb-1.5">
+<label class="block text-sm font-medium text-(--color-text-primary) mb-1.5">
   <%= t(".label") %>
 </label>
 ```
@@ -275,7 +275,7 @@ Adicione no `<head>` do layout:
 
 | Não faça | Faça |
 |----------|------|
-| Cores hardcoded `#3b82f6` nas views | Use `bg-[--color-primary]` |
+| Cores hardcoded `#3b82f6` nas views | Use `bg-(--color-primary)` |
 | JavaScript inline em views ERB | Stimulus controller |
 | Lógica de layout na view | `content_for` + layout |
 | Strings hardcoded na UI | `t('.chave')` (i18n) |
