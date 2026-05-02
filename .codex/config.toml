@@ -1,0 +1,12 @@
+# Codex project configuration
+# Docs: https://platform.openai.com/docs/codex
+
+# Instruction files loaded by Codex (in addition to AGENTS.md at root):
+#   rules/   → .codex/rules   → ../.opencode/rules   (layer conventions)
+#   agents/  → .codex/agents  → ../.opencode/agents  (agent personas)
+#   skills/  → .codex/skills  → ../.opencode/skills  (pattern library)
+# These are symlinked to .opencode/ so they stay in sync across all agents.
+
+[mcp_servers.context7]
+command = "npx"
+args = ["-y", "@upstash/context7-mcp@latest"]
